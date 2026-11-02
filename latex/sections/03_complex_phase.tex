@@ -1,0 +1,77 @@
+\section{Complex Information and the Rhombic Structure}
+\label{sec:phase}
+\subsection{What a complex informational coordinate means}
+Consider two orthonormal future contrasts \(h_1,h_2\). They might ask whether an object will move left or right and whether it will move up or down. Their span is a plane of possible predictive questions. A distinction \(h=a h_1+b h_2\) has the complex coordinate
+\begin{equation}
+\boxed{\psi(h)=a+ib,\qquad
+\J h_1=h_2,\quad\J h_2=-h_1.}
+\label{eq:complex}
+\end{equation}
+We call \(\psi\) a \emph{complex information amplitude}. Its magnitude specifies the size of the contrast; its argument specifies which combination of future alternatives it distinguishes. The plane carries the statistical metric inherited from \(\mathcal H\), and its orientation fixes the sign of the argument.
+
+A response aligned with \(h_1\) addresses the real component. A response aligned with \(h_2\) addresses its quadrature companion. A change in response organization can make the second component available where the first was previously read. At angle \(\pi\), the same distinction is read with reversed sign; at \(\pi/2\), the response addresses the orthogonal question. These meanings are determined by the calibrated questions and response, so a phase describes an informational relation rather than a media label.
+
+The Shannon calibration follows from \cref{eq:calibration}. For \(\G_c=\lambda\Id\) on this plane, the leading information is \(\epsilon^2\lambda|\psi|^2/(2\ln2)\) bits. For an arbitrary \(\G_c\), the same amount is the quadratic form \(\epsilon^2\ip{h}{\G_ch}/(2\ln2)\). Thus the statistical metric supplies the scale, while the complex coordinate retains orientation.
+
+\begin{proposition}[Composition in the complex plane]
+\label{prop:complex}
+An oriented real two-mode map \(\M\) acts by scalar complex multiplication exactly when \(\M\J=\J\M\). In compatible orthonormal frames,
+\begin{equation*}
+\M=\begin{pmatrix}a&-b\\b&a\end{pmatrix}
+\quad\Longrightarrow\quad\psi'=(a+ib)\psi.
+\end{equation*}
+For a general real two-mode map, \(\psi'=\kappa_+\psi+\kappa_-\overline\psi\), with \(\kappa_+,\kappa_-\) given in \cref{app:proofs}.
+\end{proposition}
+This gives complex information an operation law. In the scalar case, consecutive responses multiply amplitudes and add phases. The two-coefficient form also represents reflection and unequal gains along the two predictive directions.
+
+\subsection{Parallel extent and ordered depth}
+The rhombus in \cref{fig:diamond} has a direct spacetime realization. For an initiating event \(p\) and later readout event \(q\), the causal diamond is
+\begin{equation}
+\mathcal D(p,q)=J^+(p)\cap J^-(q).
+\label{eq:diamond}
+\end{equation}
+The future of \(p\) describes where its effects can reach; the past of \(q\) describes which effects can contribute to that readout. Their intersection expands and then contracts across intermediate spatial cuts. In flat \(1+1\)-dimensional spacetime, with \(p=(0,0)\), \(q=(T,0)\), and \(c=1\), the allowed slice is \(|x|\le\min(t,T-t)\).
+
+The informational counterpart is a region of compatible continuations. Intermediate variables are summed out when computing an endpoint response, while their joint constraints remain in the resulting conditional law. This gives the ``bubble'' its meaning: its interior contains unresolved realization detail, and its boundary carries the conditions used to compare possible outcomes. Spatial extent represents parallel participation; depth represents ordered composition. A future readout event specifies the question whose answer will be obtained, while the answer itself remains the target \(Z\).
+
+In null coordinates \(u=t+x\), \(v=t-x\), reciprocal rescaling
+\begin{equation}
+u'=e^\chi u,\qquad v'=e^{-\chi}v,
+\qquad du'\,dv'=du\,dv
+\label{eq:squeeze}
+\end{equation}
+preserves the interval while changing the coordinate balance between the two directions. This is a precise form of mutual stretching and compression. The physical conjecture in \cref{sec:informationons} places it in the same complex matrix representation as rotations and phase transport.
+
+\subsection{Registration of predictive questions}
+Choose a rank-\(r\) spectral band of \(\G_c\), separated by a gap from the other modes. Let \(\Proj_c\) be its projector and \(\Q_c\) an orthonormal frame in the common space \(\mathcal H\). The entries of a coefficient vector now refer to explicit future contrasts.
+
+Transferring a predictive distinction from context \(c\) to context \(d\) by least-squares matching gives the registration map
+\begin{equation}
+\M_{dc}=\Q_d^*\Q_c=\U_{dc}\Stretch_{dc},
+\quad
+\Stretch_{dc}=(\M_{dc}^*\M_{dc})^{1/2}.
+\label{eq:registration}
+\end{equation}
+For nonsingular overlap, \(\U_{dc}=\polar(\M_{dc})\) is unique. The positive factor measures overlap strengths; the orthogonal factor preserves the comparison of directions. Equivalently, \(\U_{dc}\) minimizes \(\norm{\Q_dU-\Q_c}_F\) over orthogonal \(U\). This is a concrete registration operation on predictions.
+
+A system's implemented registration can also be measured by presenting calibrated probes and regressing its transferred coefficients in the endpoint frame. In that case \(\M_{dc}\) denotes the measured transfer, and the same polar decomposition separates gain from orientation. The measurement protocol records which registration is used. Smooth least-squares registration obeys the projector transport equation
+\begin{equation*}
+\dot h=[\dot\Proj,\Proj]h,
+\qquad h\in\operatorname{Ran}\Proj,
+\end{equation*}
+the standard minimum-change transport of subspaces~\citep{bendokat2023}.
+
+\begin{definition}[Information phase]
+\label{def:phase}
+Let \(\alpha\) and \(\beta\) be two registered routes between the same contexts, with ordered orientation products \(\U_\alpha\) and \(\U_\beta\). Their relative information transport and phase spectrum are
+\begin{equation}
+\boxed{\Hol_{\beta\leftarrow\alpha}=\U_\beta^*\U_\alpha,
+\qquad\operatorname{spec}(\Hol)=\{e^{i\phi_k}\}.}
+\label{eq:phase}
+\end{equation}
+On an oriented real two-mode sector with \(\Hol\in SO(2)\), the information phase is the angle \(\phi\) in \(\Hol=\Rot(\phi)\), modulo \(2\pi\).
+\end{definition}
+
+Information phase is therefore the relative orientation of a predictive distinction after its response routes are compared. A zero phase means the two registrations align that distinction; a nonzero phase tells how to rotate one registration to match the other. Comparing a route with a fixed reference is the open-path case. Returning to the initial context gives the closed-loop case, or holonomy. The return is a comparison in predictive-question space; the physical process can continue forward throughout.
+
+Changing local frames \(\Q_c\mapsto\Q_cV_c\) conjugates \(\Hol\) at the starting context, preserving its eigenphases. A signed planar angle uses an oriented frame; reflection reverses that convention. For smooth geometric transport, the ordered route determines the phase independently of its traversal speed. This is the geometric-phase structure developed by Pancharatnam, Berry and Simon~\citep{pancharatnam1956,berry1984,simon1983}, here applied to statistically calibrated predictive distinctions.

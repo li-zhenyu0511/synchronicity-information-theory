@@ -1,0 +1,137 @@
+\section{Notation and Measurement Contract}
+\label{app:notation}
+\begin{table}[H]
+\centering
+\caption{The same notation is used for prediction, geometry and response throughout the paper.}
+\begin{tabular}{p{.16\textwidth}p{.69\textwidth}}
+\toprule
+Symbol & Meaning\\
+\midrule
+\(\Omega,\mu\) & Admissible process realizations and their probability law.\\
+\(Z,\nu\) & Future target and its calibration distribution.\\
+\(X_c\) & Present record in response context \(c\).\\
+\(h\in\mathcal H\) & Centered future contrast; \(\norm h^2_\nu\) is its variance.\\
+\(\T_c,\G_c\) & Conditional-prediction operator and recoverability operator.\\
+\(\mathcal S_c(h)\) & Predictive strength, equal to \(\norm{\T_ch}^2\).\\
+\(\Q_c,\Proj_c\) & Frame and projector of a selected predictive mode sector.\\
+\(\M_{dc}=\U_{dc}\Stretch_{dc}\) & Registered response map, orientation factor and positive stretch factor.\\
+\(\psi=a+ib\) & Complex coordinate of a contrast in an oriented two-mode sector.\\
+\(\Hol,\phi\) & Relative route orientation and its planar angle or eigenphase spectrum.\\
+\(\xi,\delta\mathsf x\) & Informationon amplitude and its proposed projected event increment.\\
+\(\mathcal A,\mathcal F\) & Phase connection and curvature in the spinorial realization.\\
+\bottomrule
+\end{tabular}
+\end{table}
+Comparisons use a common target meaning and calibration distribution \(\nu\). A new action that changes the target law is represented by its corresponding joint process and an explicit identification of the compared target contrasts. The future target appears in completed calibration episodes; a forecast evaluates the resulting operator on currently available records. Scalar information is reported in bits, geometric phase in radians, and physical lengths enter only through the realization scale \(\ell\).
+
+\section{Prediction, Complex Composition, and Registration}
+\label{app:proofs}
+\subsection{Prediction principle}
+Let \(m(X_c)=\E[h(Z)\mid X_c]\). For any square-integrable \(g(X_c)\), conditional orthogonality gives
+\begin{equation*}
+\E[(h-g)^2]=\E[(h-m)^2]+\E[(m-g)^2].
+\end{equation*}
+The minimum is attained at \(g=m\). Since \(h\) is centered, the variance decomposition is \(\norm h^2=\E[\Var(h\mid X_c)]+\Var(m)\), proving \cref{eq:prediction}. Its first term is zero exactly when \(h\) is almost surely determined on each conditional continuation class. Under log loss, the optimum losses before and after reading \(X_c\) are \(H(Z)\) and \(H(Z\mid X_c)\), whose difference is mutual information.
+
+\subsection{Calibration against Shannon information}
+For \cref{eq:calibration}, let \(g(x)=\T_ch(x)\). The response distribution conditional on the calibration bit is exactly \(p_c(x)[1+b\epsilon g(x)]\). Therefore
+\begin{equation*}
+I(B;X_c)=\frac1{2\ln2}\sum_xp_c(x)
+\big[(1+\epsilon g(x))\ln(1+\epsilon g(x))+(1-\epsilon g(x))\ln(1-\epsilon g(x))\big].
+\end{equation*}
+Expanding the even bracket gives \(\epsilon^2\norm{\T_ch}^2/(2\ln2)+O(\epsilon^4)\), uniformly when the preparation stays away from its positivity boundary. Jensen's inequality gives \(0\preceq\G_c\preceq\Id\). If \(Z\to X_c\to Y\), the tower property yields \(\T_Yh=\E[\T_ch\mid Y]\) and \(\G_Y\preceq\G_c\). The potential bound follows by applying this contraction to each allowed operation on retained state \(R\).
+
+\subsection{Complex operation law}
+For \(\J=\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right)\), the equality \(\M\J=\J\M\) requires \(m_{11}=m_{22}\) and \(m_{21}=-m_{12}\). For a general real matrix,
+\begin{equation*}
+\kappa_+=\frac{m_{11}+m_{22}+i(m_{21}-m_{12})}{2},\qquad
+\kappa_-=\frac{m_{11}-m_{22}+i(m_{21}+m_{12})}{2}
+\end{equation*}
+gives \(\psi'=\kappa_+\psi+\kappa_-\bar\psi\). The common-gain orientation-preserving case has \(\kappa_-=0\), and ordinary complex multiplication supplies its composition rule.
+
+\subsection{Registration and information phase}
+For \(\M_{dc}=\Q_d^*\Q_c=L\Sigma R^*\), expanding \(\norm{\Q_dU-\Q_c}_F^2\) leaves the maximization of \(\Rea\tr(U^*\M_{dc})\). Its unique maximizer for nonsingular overlap is \(LR^*\). The positive factor is \(R\Sigma R^*\). Frame changes give \(\U_{dc}\mapsto V_d^*\U_{dc}V_c\), so for two routes with common endpoints, \(\Hol\mapsto V_c^*\Hol V_c\). Eigenphases are preserved. On an oriented real plane, orientation-preserving frame changes preserve the signed angle; reflection exchanges its sign convention.
+
+For a smooth projector path, differentiating \(\Proj^2=\Proj\) gives \(\Proj\dot\Proj\Proj=0\). The minimum adjustment of \(h=\Proj h\) satisfies \(\Proj\dot h=0\), hence \(\dot h=[\dot\Proj,\Proj]h\). The generator is skew-adjoint. A positive reparameterization rescales the derivative and path differential together, leaving the transported result unchanged. A closed-loop comparison uses an inverse registration map to compare two forward routes in the same frame.
+
+\section{The Gaussian Example and Prediction Error}
+\label{app:example}
+For \(X_n=A_nZ+\eta\), Gaussian conditioning gives
+\begin{equation*}
+\E[Z\mid X_n]=\frac{A_n^TX_n}{1+\sigma^2},\qquad
+\operatorname{Cov}(Z\mid X_n)=\Id_3-\frac{A_n^TA_n}{1+\sigma^2}.
+\end{equation*}
+These also specify a prospective generation of \(Z\) from a previously sampled record \(X_n\). On linear contrasts, the covariance of the conditional mean is \((I-nn^T)/(1+\sigma^2)\). The Gaussian determinant formula gives \cref{eq:example}. Linear contrasts are used here through exact Gaussian regression; bounded contrasts supply the binary density perturbations of \cref{eq:calibration}.
+
+Along the three great-circle arcs, the initial frame \((e_x,e_y)\) is transported successively to \((-e_z,e_y)\), \((-e_z,-e_x)\), and \((e_y,-e_x)\). This proves the quarter-turn. Intermediate contexts along the arcs specify the comparison across the full route.
+
+For \cref{prop:loss}, the conditional KL divergence between equal-covariance Gaussian predictions is \(\norm{(K-K_*)w}^2/(2\sigma^2)\). Averaging with \(\E[ww^T]=\Id_2/2\) proves \cref{eq:loss}. Using \(\tr[\Rot(\phi)^T\Rot(\phi_*)]=2\cos(\phi-\phi_*)\) gives \cref{eq:phaseloss}.
+
+\section{Error Control and Information Accounting}
+\label{app:errors}
+If implemented transfers satisfy \(\M_j=a_j\U_j+E_j\), with \(\norm{E_j}\le\epsilon_j\), then replacing one factor at a time gives
+\begin{equation*}
+\norm{\M_m\cdots\M_1-(a_m\U_m)\cdots(a_1\U_1)}
+\le\sum_{j=1}^m\left(\prod_{k=j+1}^m\norm{\M_k}\right)\epsilon_j
+\left(\prod_{k=1}^{j-1}|a_k|\right).
+\end{equation*}
+For orthogonal link comparisons this reduces to a sum of link errors. Sampling, dictionary approximation and path discretization contribute to those errors. For planar rotations,
+\(\norm{\Rot(\phi)-\Rot(\phi')}=2|\sin((\phi-\phi')/2)|\).
+If an estimated response satisfies \(\norm{\widehat K-K}_F\le e\), and \(d=\norm{\widehat K-K_*}_F\), the prediction risk obeys
+\begin{equation*}
+\frac{\max(0,d-e)^2}{4\sigma^2}\le\mathcal R\le\frac{(d+e)^2}{4\sigma^2}.
+\end{equation*}
+
+The residual result follows from \(\Delta_c=\E[r_c\mid X_c,V]\), so \(r_c-\Delta_c\) is orthogonal to \(\Delta_c\), proving \cref{eq:improvement}. A separate source-information balance distinguishes retention from disclosure. Let \(C\) be previous public records, \(R\) retained state, \(V\) incoming conditions, and \((R',X)\) the next state and record. If \(Z\to(R,V,C)\to(R',X,C)\), define
+\begin{align*}
+\mathcal B&=I(Z;R\mid C),&\mathcal A&=I(Z;V\mid R,C),\\
+\mathcal D&=I(Z;X\mid C),&\mathcal B'&=I(Z;R'\mid C,X),\\
+\mathcal L&=I(Z;R,V\mid C)-I(Z;R',X\mid C).&&
+\end{align*}
+The chain rule and data processing give \(\mathcal B+\mathcal A=\mathcal D+\mathcal B'+\mathcal L\), with \(\mathcal L\ge0\). This accounts for newly acquired, disclosed, retained and lost target information within the chosen process boundary.
+
+\section{Geometry of the Informationon Hypothesis}
+\label{app:physical}
+\subsection{Hermitian projection, interval, and order}
+Write
+\begin{equation*}
+\mathsf x=\begin{pmatrix}x^0+x^3&x^1-ix^2\\x^1+ix^2&x^0-x^3\end{pmatrix}.
+\end{equation*}
+Its determinant is the Lorentzian quadratic form in \cref{eq:interval}. For \(\delta\mathsf x=\ell\xi\xi^\dagger\), the determinant is zero and \(\delta x^0=\ell\norm\xi^2/2\ge0\). For two increments \(\ell\xi\xi^\dagger\) and \(\ell\eta\eta^\dagger\),
+\begin{equation*}
+\det\big(\ell\xi\xi^\dagger+\ell\eta\eta^\dagger\big)
+=\ell^2|\xi_1\eta_2-\xi_2\eta_1|^2.
+\end{equation*}
+Non-collinear amplitudes therefore generate a timelike separation by composition. The Loewner order \(\mathsf x_q-\mathsf x_p\succeq0\) is precisely future causal order in these coordinates. The interval \(\mathsf x_p\preceq\mathsf x\preceq\mathsf x_q\) is a causal diamond. In a spatially one-dimensional section it is the rhombus of \cref{fig:diamond}.
+
+The projection postulate identifies \(\ell\xi\xi^\dagger\) with an event increment. The preceding identities determine its interval and order. Common endpoints require equal sums of increments along their routes.
+
+To construct such routes, draw \(\Psi\) and a unitary \(V\), and write \(\eta_k=(\Psi V)_{:k}\). Set \(\mathsf x_j=\mathsf x_p+\ell\sum_{k\le j}\eta_k\eta_k^\dagger\). Each step is future null, and \(\mathsf x_m=\mathsf x_p+\ell\Psi\Psi^\dagger\) follows from \(VV^\dagger=\Id\). A record \(X=f(\Psi\Psi^\dagger)\) predicts the eventual property \(Z=f((\mathsf x_m-\mathsf x_p)/\ell)\) exactly, while the intermediate increments vary with \(V\).
+
+Independent complex-Gaussian columns with common covariance \(\mathsf C\) form a right-unitarily invariant ensemble. A random unitary therefore preserves their unconditional distribution and supplies different routes conditional on their common completion. Subcollections of columns define smaller intervals inside a larger completion; composition adds their positive endpoint matrices.
+
+\subsection{Covariance and phase}
+For \(A\in SL(2,\C)\), \(\det(A\mathsf xA^\dagger)=\det\mathsf x\). Positive matrices remain positive. Substitution of \cref{eq:complexframe} gives \cref{eq:uv}; the real and imaginary parameters respectively produce a boost and a transverse rotation.
+
+A nonzero normalized spinor has a local representative
+\(n=(\cos(\theta/2),e^{i\varphi}\sin(\theta/2))^T\). The phase connection is
+\begin{equation*}
+\mathcal A=\sin^2(\theta/2)\,d\varphi,\qquad
+\mathcal F=\tfrac12\sin\theta\,d\theta\wedge d\varphi.
+\end{equation*}
+Changing \(n\mapsto e^{i\lambda}n\) gives \(\mathcal A\mapsto\mathcal A+d\lambda\); the curvature and closed-loop phase are unchanged. This is the projective phase geometry of the amplitude. Its Hermitian metric specifies the normalization used for phase comparison. General Lorentz frame transformations preserve the interval projection; phase calibration uses the corresponding transformed local metric or a declared observer frame.
+
+For the three representatives in the main text,
+\begin{equation*}
+(n_0^\dagger n_2)(n_2^\dagger n_1)(n_1^\dagger n_0)
+=\frac{1-i}{4},
+\end{equation*}
+which gives \(\Phi=-\pi/4\) after normalization. Repeating the internal comparison accumulates its phase while the associated sum of future increments increases. This supplies an explicit distinction between recurrence of a relation and recurrence to a spacetime location.
+
+\subsection{A random realization class}
+For a positive Hermitian covariance \(\mathsf C\), take
+\begin{equation*}
+p(\xi\mid\mathsf C)=\frac{1}{\pi^2\det\mathsf C}
+\exp(-\xi^\dagger\mathsf C^{-1}\xi).
+\end{equation*}
+The mean increment is \(\ell\mathsf C\). The simultaneous change \((\xi,\mathsf C)\mapsto(A\xi,A\mathsf CA^\dagger)\) preserves the family, with real Jacobian \(|\det A|^2=1\). Covariance evolution, inter-event correlations and graph weights specify the physical dynamics to be tested.

@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage{microtype,graphicx,booktabs}
+\usepackage{balance}
+\usepackage{hyperref}
+\usepackage[preprint]{icml2026}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,angles,quotes}
+\usepackage[capitalize,noabbrev]{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Imma}{Im}
+\DeclareMathOperator{\polar}{polar}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Id}{\mathsf I}
+\newcommand{\T}{\mathsf T}
+\newcommand{\G}{\mathsf G}
+\newcommand{\Q}{\mathsf Q}
+\newcommand{\Proj}{\mathsf P}
+\newcommand{\M}{\mathsf M}
+\newcommand{\U}{\mathsf U}
+\newcommand{\Stretch}{\mathsf S}
+\newcommand{\Hol}{\mathsf H}
+\newcommand{\J}{\mathsf J}
+\newcommand{\Rot}{\mathsf R}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ip}[2]{\left\langle#1,#2\right\rangle}
+\definecolor{routeblue}{HTML}{0072B2}
+\definecolor{routeorange}{HTML}{D55E00}
+\renewcommand{\today}{November 2, 2026}
+\icmltitlerunning{An Information-Theoretic Principle of Prediction: Synchronicity}
+\hypersetup{pdftitle={An Information-Theoretic Principle of Prediction: Synchronicity},pdfauthor={Zhenyu Li}}
+\begin{document}
+\twocolumn[
+\icmltitle{\texorpdfstring{An Information-Theoretic Principle of Prediction:\\Synchronicity}{An Information-Theoretic Principle of Prediction: Synchronicity}}
+\begin{icmlauthorlist}
+\icmlauthor{Zhenyu Li}{zju}
+\end{icmlauthorlist}
+\icmlaffiliation{zju}{Zhejiang University}
+\icmlcorrespondingauthor{Zhenyu Li}{zylics@zju.edu.cn}
+\icmlkeywords{Prediction, information theory, synchronicity, complex information, geometric phase}
+\vskip 0.3in
+]
+\printAffiliationsAndNotice{}
+\begin{abstract}
+Prediction is possible when a present record constrains the future continuations of a process. We formulate synchronicity as the shared relational organization through which records, intermediate responses, and later outcomes obey such constraints. A conditional-prediction operator gives a unified description of information amount, recoverable future distinctions, and their transport between response contexts. Complex information records the magnitude and orientation of paired predictive distinctions; information phase measures their relative orientation after alternative routes of interpretation and response. A rhombic propagation--recombination geometry connects these definitions to exact prediction-error identities, a quarter-turn example, and the acquisition of useful information from residual error. We also propose an informationon construction in which complex relational amplitudes generate Lorentzian interval geometry and a phase connection, providing a concrete physical hypothesis for the same organization.
+\end{abstract}
+\input{sections/01_prediction.tex}
+\input{sections/02_information.tex}
+\input{sections/03_complex_phase.tex}
+\input{sections/04_predictive_consequences.tex}
+\input{sections/05_learning.tex}
+\input{sections/06_informationons.tex}
+\input{sections/07_discussion.tex}
+\clearpage
+\raggedbottom
+\balance
+\bibliography{references}
+\bibliographystyle{icml2026}
+\clearpage
+\nobalance
+\appendix
+\onecolumn
+\input{sections/appendices.tex}
+\end{document}

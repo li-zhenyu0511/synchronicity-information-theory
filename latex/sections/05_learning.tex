@@ -1,0 +1,26 @@
+\section{Residuals, Learning, and Reusable Prediction}
+\label{sec:learning}
+The unexplained part of an outcome is relative to the available record. For a future contrast \(h(Z)\), let
+\begin{equation*}
+r_c=h(Z)-\T_ch(X_c).
+\end{equation*}
+When an additional record \(V\) becomes available, its contribution is the part of this residual that it predicts:
+\begin{equation}
+\Delta_c=\E[r_c\mid X_c,V],\qquad
+\widehat h_{c,V}=\widehat h_c+\Delta_c.
+\label{eq:residual}
+\end{equation}
+Orthogonality of conditional expectation gives the exact improvement
+\begin{equation}
+\E[r_c^2]-\E[(r_c-\Delta_c)^2]=\E[\Delta_c^2].
+\label{eq:improvement}
+\end{equation}
+For logarithmic loss the corresponding improvement is \(I(Z;V\mid X_c)\). The useful part of new evidence is therefore its relation to what remains unresolved. A record with considerable variability can contribute little when it repeats an already available distinction.
+
+This interpretation clarifies elimination. For noise-free records, successive observations intersect compatible continuation classes. For noisy records, they revise the weights of those classes. Their expected predictive benefit is given by \cref{eq:improvement} or conditional mutual information. A particular observation can expose more uncertainty than expected; the conditional law records that change as part of the same process.
+
+Learning retains a reusable approximation to these relations. It can improve the conditional predictor \(\T_c\), make additional modes of \(\G_c\) accessible, or improve the registrations \(\M_{dc}\) that let different components work with the same distinctions. The resulting memory may be located in model parameters, a physical configuration, an external record, or their joint relation. This connects predictive-state approaches~\citep{shalizi2001} with the computational accessibility emphasized by usable information~\citep{xu2020}.
+
+The rhombus organizes this activity without requiring a fixed number of stages. Responses open several routes; evidence restricts their possible continuations; comparison aligns what those routes imply; and recombination leaves a reusable prediction. The earlier a--d intuition can be read as a coarse description of this circulation. A measured phase gives an angular comparison of selected predictive modes within it.
+
+For a retained summary \(R=f(H)\) of history \(H\), the ideal log-loss advantage of the full history under a controlled probe \(A\) is \(I(H;Z\mid R,A)\). A system that detects such a gap has evidence that its present representation omits a predictive distinction. Seeking a record that explains the residual is then a concrete route from detected incompleteness to further learning. The same construction applies when other agents or the surrounding environment retain the missing relation.

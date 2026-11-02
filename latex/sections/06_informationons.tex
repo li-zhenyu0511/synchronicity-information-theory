@@ -1,0 +1,80 @@
+\section{An Informationon Construction}
+\label{sec:informationons}
+\subsection{From relational amplitudes to event geometry}
+The preceding theory describes prediction through records and responses. We now propose a physical realization in which elementary relational amplitudes generate both event geometry and comparison phase. The construction uses the spinor representation of Lorentzian geometry~\citep{penrose1960}. Information-space approaches based on elementary process events have also been explored by \citet{sulis2014}; the elementary object used here is specified by the following hypothesis.
+
+\begin{hypothesis}[Informationon realization]
+An informationon is an elementary realization event carrying a two-component complex amplitude \(\xi\in\C^2\), together with relations specifying its admissible predecessors. Its projected event increment is
+\begin{equation}
+\boxed{\delta\mathsf x=\ell\xi\xi^\dagger,
+\qquad \mathsf x=x^0\Id+\sum_{k=1}^3x^k\sigma_k,}
+\label{eq:infoon}
+\end{equation}
+where \(\sigma_k\) are the Pauli matrices and \(\ell>0\) fixes the physical realization scale. Event coordinates accumulate these increments along admissible routes; routes meeting at a common event obey the corresponding sum-consistency condition.
+\end{hypothesis}
+
+Here the two entries of \(\xi\) may be viewed as a pair of complex informational modes. They carry internal relational coordinates before a spacetime position is assigned. Their quadratic projection has real four-component coordinates and satisfies
+\begin{equation}
+\det\mathsf x=(x^0)^2-\sum_{k=1}^3(x^k)^2.
+\label{eq:interval}
+\end{equation}
+A single increment has \(\det\delta\mathsf x=0\) and \(\delta x^0\ge0\). Sums of non-collinear increments are future timelike. Thus a positive ordering of elementary realizations projects to a causal cone, and two common endpoints delimit the rhombic region of \cref{eq:diamond}.
+
+For example, the two rank-one increments \(\ell|0\rangle\langle0|\) and \(\ell|1\rangle\langle1|\) add to \(\ell\Id\). The increments \(\ell|+\rangle\langle+|\) and \(\ell|-\rangle\langle-|\) have the same sum. Different intermediate realizations can therefore agree on an endpoint event. A coarse record can retain that endpoint relation while leaving the intermediate route unresolved.
+
+A general construction generates such agreement directly. Collect \(m\) amplitudes into \(\Psi=(\xi_1,\ldots,\xi_m)\). For any unitary \(V\in U(m)\), the columns of \(\Psi V\) give a different elementary decomposition with the same completion:
+\begin{equation}
+\boxed{\mathsf x_q-\mathsf x_p=\ell\Psi\Psi^\dagger
+=\ell(\Psi V)(\Psi V)^\dagger.}
+\label{eq:completion}
+\end{equation}
+Successive column sums describe a future-directed route. Choosing \(V\) randomly changes the intermediate route while preserving the completion. A present record of an invariant of \(\Psi\Psi^\dagger\) therefore predicts that part of the endpoint before the route is realized. This is an explicit model of the prediction principle based on a shared constraint.
+
+This realizes the LED-banner intuition: an extended pattern is a relation among elementary updates and their projections. Pattern continuity is carried by that relation, while successive realizations supply its local support. An intrinsic realization label orders the updates used in a description; observable interval and phase comparisons are expressed through their relations.
+
+\subsection{Compression and rotation in one complex frame law}
+For \(A\in SL(2,\C)\), the transformation
+\begin{equation*}
+\xi\mapsto A\xi,\qquad
+\mathsf x\mapsto A\mathsf xA^\dagger
+\end{equation*}
+preserves \(\det\mathsf x\) and the future cone. A particularly informative family is
+\begin{equation}
+A(\chi,\vartheta)=
+\begin{pmatrix}
+e^{(\chi+i\vartheta)/2}&0\\
+0&e^{-(\chi+i\vartheta)/2}
+\end{pmatrix}.
+\label{eq:complexframe}
+\end{equation}
+Writing \(u=x^0+x^3\), \(v=x^0-x^3\), and \(w=x^1-ix^2\), it gives
+\begin{equation}
+u'=e^\chi u,\qquad v'=e^{-\chi}v,
+\qquad w'=e^{i\vartheta}w.
+\label{eq:uv}
+\end{equation}
+The real parameter produces reciprocal stretching of null directions; the imaginary parameter rotates a transverse relation. Both preserve the same determinant \(uv-|w|^2\). Hyperbolic compression and compact rotation thus have a common complex matrix representation, with distinct transformation parameters.
+
+For a collection of informationons the two actions combine as \(\Psi\mapsto A\Psi V\). The left action transforms the interval coordinates, while the right action changes the unresolved decomposition at fixed completion. The amplitude-factor geometry \(\rho=WW^\dagger\) and its comparison transport have an established formulation in Uhlmann's work~\citep{uhlmann1986}. Here that structure is assigned the role of organizing elementary event realizations.
+
+The relation to prediction is structural. A present record specifies part of the joint realization, and the admissible increments and endpoint conditions restrict its continuations. The rhombic organization supplies a way to compare distributed partial realizations with a common future event. The informational calculation remains the conditional law in \cref{eq:posterior}; \cref{eq:infoon} proposes a physical origin for the organization on which that calculation depends.
+
+\subsection{An internal phase and its connection}
+The projection \(\xi\xi^\dagger\) is unchanged by \(\xi\mapsto e^{i\theta}\xi\). Normalizing \(n=\xi/\norm\xi\), comparisons between nonorthogonal representatives give
+\begin{equation}
+\mathcal U_{dc}=\frac{n_d^\dagger n_c}{|n_d^\dagger n_c|},
+\qquad
+e^{i\Phi_\gamma}=\prod_{(c,d)\in\gamma}\mathcal U_{dc}.
+\label{eq:spinphase}
+\end{equation}
+Local changes of representative multiply a link by endpoint phases that cancel around the loop. This is the rank-one complex version of the registration law in \cref{eq:phase}. For a smooth coarse field \(n(x)\), its connection is \(\mathcal A_\mu=-i n^\dagger\partial_\mu n\), with curvature \(\mathcal F_{\mu\nu}=\partial_\mu\mathcal A_\nu-\partial_\nu\mathcal A_\mu\). The loop phase is \(-\oint\mathcal A\) in this convention. The projected event geometry and the internal phase connection therefore arise from the same amplitude representation.
+
+This connection gives an explicit nonzero phase. For
+\begin{equation*}
+n_0=(1,0)^T,\quad
+n_1=(1,1)^T/\sqrt2,\quad
+n_2=(1,i)^T/\sqrt2,
+\end{equation*}
+the loop \(n_0\to n_1\to n_2\to n_0\) has \(\Phi=-\pi/4\). The internal relation returns while sums of positive event increments continue to advance. Relational recurrence and forward physical progress coexist in this construction.
+
+Random fluctuations can be introduced covariantly. One explicit conditional ensemble is \(\xi\sim\mathcal{CN}(0,\mathsf C)\), with \(\mathsf C\succ0\). It has \(\E[\delta\mathsf x]=\ell\mathsf C\), and transforms consistently under \((\xi,\mathsf C)\mapsto(A\xi,A\mathsf CA^\dagger)\). The covariance describes local physical conditions. A full physical dynamics specifies how these conditions and the weights of compatible event graphs evolve. The informationon hypothesis places those dynamical choices on a common representation of intervals, fluctuations, and phase; the explicit construction above establishes their algebraic compatibility.

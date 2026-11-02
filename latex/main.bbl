@@ -1,0 +1,95 @@
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bendokat et~al.(2023)Bendokat, Zimmermann, and Absil]{bendokat2023}
+Bendokat, T., Zimmermann, R., and Absil, P.-A.
+\newblock A {Grassmann} manifold handbook: Basic geometry and computational
+  aspects.
+\newblock arXiv:2011.13699, version 3, 2023.
+\newblock URL \url{https://arxiv.org/abs/2011.13699}.
+
+\bibitem[Berry(1984)]{berry1984}
+Berry, M.~V.
+\newblock Quantal phase factors accompanying adiabatic changes.
+\newblock \emph{Proceedings of the Royal Society of London. Series A},
+  392:\penalty0 45--57, 1984.
+\newblock \doi{10.1098/rspa.1984.0023}.
+
+\bibitem[Calmon et~al.(2017)Calmon, Makhdoumi, M{\'e}dard, Varia, Christiansen,
+  and Duffy]{calmon2017}
+Calmon, F.~P., Makhdoumi, A., M{\'e}dard, M., Varia, M., Christiansen, M., and
+  Duffy, K.~R.
+\newblock Principal inertia components and applications.
+\newblock arXiv:1704.00820, 2017.
+\newblock URL \url{https://arxiv.org/abs/1704.00820}.
+
+\bibitem[Pancharatnam(1956)]{pancharatnam1956}
+Pancharatnam, S.
+\newblock Generalized theory of interference, and its applications. part i.
+  coherent pencils.
+\newblock \emph{Proceedings of the Indian Academy of Sciences, Section A},
+  44:\penalty0 247--262, 1956.
+\newblock \doi{10.1007/BF03046050}.
+
+\bibitem[Penrose(1960)]{penrose1960}
+Penrose, R.
+\newblock A spinor approach to general relativity.
+\newblock \emph{Annals of Physics}, 10\penalty0 (2):\penalty0 171--201, 1960.
+\newblock \doi{10.1016/0003-4916(60)90021-X}.
+
+\bibitem[Shalizi \& Crutchfield(2001)Shalizi and Crutchfield]{shalizi2001}
+Shalizi, C.~R. and Crutchfield, J.~P.
+\newblock Computational mechanics: Pattern and prediction, structure and
+  simplicity.
+\newblock \emph{Journal of Statistical Physics}, 104:\penalty0 817--879, 2001.
+\newblock URL \url{https://arxiv.org/abs/cond-mat/9907176}.
+
+\bibitem[Shannon(1948)]{shannon1948}
+Shannon, C.~E.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+\newblock \doi{10.1002/j.1538-7305.1948.tb01338.x}.
+
+\bibitem[Simon(1983)]{simon1983}
+Simon, B.
+\newblock Holonomy, the quantum adiabatic theorem, and {Berry}'s phase.
+\newblock \emph{Physical Review Letters}, 51:\penalty0 2167--2170, 1983.
+\newblock \doi{10.1103/PhysRevLett.51.2167}.
+
+\bibitem[Sulis(2014)]{sulis2014}
+Sulis, W.
+\newblock A process model of quantum mechanics.
+\newblock arXiv:1404.3414, 2014.
+\newblock URL \url{https://arxiv.org/abs/1404.3414}.
+
+\bibitem[Surya(2019)]{surya2019}
+Surya, S.
+\newblock The causal set approach to quantum gravity.
+\newblock \emph{Living Reviews in Relativity}, 22:\penalty0 5, 2019.
+\newblock \doi{10.1007/s41114-019-0023-1}.
+
+\bibitem[Uhlmann(1986)]{uhlmann1986}
+Uhlmann, A.
+\newblock Parallel transport and ``quantum holonomy'' along density operators.
+\newblock \emph{Reports on Mathematical Physics}, 24\penalty0 (2):\penalty0
+  229--240, 1986.
+\newblock \doi{10.1016/0034-4877(86)90055-8}.
+
+\bibitem[Xu et~al.(2020)Xu, Zhao, Song, Stewart, and Ermon]{xu2020}
+Xu, Y., Zhao, S., Song, J., Stewart, R., and Ermon, S.
+\newblock A theory of usable information under computational constraints.
+\newblock In \emph{International Conference on Learning Representations}, 2020.
+\newblock URL \url{https://arxiv.org/abs/2002.10689}.
+
+\bibitem[Yu et~al.(2015)Yu, Wang, and Samworth]{yu2015}
+Yu, Y., Wang, T., and Samworth, R.~J.
+\newblock A useful variant of the {Davis--Kahan} theorem for statisticians.
+\newblock \emph{Biometrika}, 102\penalty0 (2):\penalty0 315--323, 2015.
+\newblock URL \url{https://arxiv.org/abs/1405.0680}.
+
+\end{thebibliography}

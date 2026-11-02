@@ -1,0 +1,4 @@
+*.pdf -text
+*.zip -text
+*.sty -text
+*.bst -text

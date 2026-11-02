@@ -1,0 +1,75 @@
+\section{The Information-Theoretic Principle}
+\label{sec:information}
+\subsection{Records and admissible continuations}
+Let \((\Omega,\mu)\) describe admissible realizations of a process. A realization includes both the available records and the later outcome. Write \(Z:\Omega\to\mathcal Z\) for a future target, \(\nu\) for its distribution, and \(X_c:\Omega\to\mathcal X_c\) for the record available in context \(c\). A context specifies which observations and response operations are available. The initial development uses finite alphabets and \(\nu(z)>0\); square-integrable continuous examples are considered below.
+
+Observing \(X_c=x\) restricts the process to the compatible continuations
+\begin{equation}
+\begin{aligned}
+\Omega_{c,x}&=\{\omega:X_c(\omega)=x\},\\
+p_c(z\mid x)&=\mu(Z=z\mid X_c=x).
+\end{aligned}
+\label{eq:posterior}
+\end{equation}
+For noisy measurements, likelihood weights perform the same restriction probabilistically. Zero likelihood removes a continuation; unequal likelihoods change its weight. The target event is specified before its outcome is read. The conditional law can be calibrated from previous realizations or derived from a model of the process.
+
+\begin{definition}[Predictive synchronicity]
+A present record and a future distinction have predictive synchronicity when they share a reproducible constraint in the joint process law. For a centered future contrast \(h(Z)\), its strength in context \(c\) is
+\begin{equation}
+\mathcal S_c(h)=\Var\!\left(\E[h(Z)\mid X_c]\right).
+\label{eq:synchronicity}
+\end{equation}
+\end{definition}
+This definition gives the term a specific role: it measures the part of a future contrast that varies systematically with the present record. Multiple records can supply a joint constraint even when each alone is uninformative. For independent fair bits \(A,B\) and target \(Z=A\oplus B\), either bit leaves one bit of uncertainty, while their pair determines \(Z\).
+
+In \cref{fig:diamond}(b), the records leave \(Z\in\{3,7\}\). The future outcome remains variable, while its odd parity is already fixed. Prediction can determine a property before resolving the entire event.
+
+\begin{theorem}[Prediction principle]
+\label{thm:prediction}
+For any square-integrable centered contrast \(h(Z)\), the optimal prediction from \(X_c\) is \(\widehat h_c=\E[h(Z)\mid X_c]\), and
+\begin{equation}
+\min_g\E[(h(Z)-g(X_c))^2]
+=\norm h_\nu^2-\mathcal S_c(h).
+\label{eq:prediction}
+\end{equation}
+The contrast is determined by the record exactly when it is constant, up to conditional null sets, on each compatible continuation class \(\Omega_{c,x}\).
+\end{theorem}
+The result is the conditional-expectation projection theorem, here used as the organizing principle of prediction. Under logarithmic loss, the corresponding reduction in optimal expected loss is \(I(Z;X_c)\). Thus classical information amount and contrast-specific predictive strength describe the same joint relation at different resolutions.
+
+For the sheep count, write the later number as \(Z=X+\Delta\), where \(X\) is the registered count and \(\Delta\) accounts for subsequent arrivals, departures, births, or losses. The prediction is \(X+\E[\Delta\mid X]\). Recording \(\Delta\) or ensuring \(\Delta=0\) makes the count exact. Stable registration and a law for intervening changes are the physical content supporting the inference. Finite counters and continuous mechanical systems both realize such continuation constraints.
+
+\subsection{One operator for amount and structure}
+Let \(\mathcal H=L_0^2(\nu)\) be the space of centered future contrasts, with \(\ip{h}{k}_\nu=\E[h(Z)k(Z)]\). Define
+\begin{equation}
+\boxed{\T_c h=\E[h(Z)\mid X_c],\qquad
+\G_c=\T_c^*\T_c.}
+\label{eq:operator}
+\end{equation}
+Then \(\mathcal S_c(h)=\ip{h}{\G_ch}_\nu\), with \(0\preceq\G_c\preceq\Id\). Eigenvectors of \(\G_c\) identify future questions recoverable from the record; eigenvalues give their predictive strengths. This is the conditional-estimation geometry underlying principal inertia components~\citep{calmon2017}.
+
+The units are fixed by a binary discrimination experiment. Let a fair calibration bit \(B\) select \(\nu_b(z)=\nu(z)[1+b\epsilon h(z)]\), with \(|\epsilon|\norm h_\infty<1\), while the response channel \(p(X_c\mid Z)\) is held fixed. Then
+\begin{equation}
+I(B;X_c)=\frac{\epsilon^2}{2\ln2}\ip{h}{\G_ch}_\nu+O(\epsilon^4)
+\quad\text{bits}.
+\label{eq:calibration}
+\end{equation}
+This experiment calibrates the strength of a distinction through response statistics. Ordinary forecasts evaluate \(\T_ch\) on the record currently available.
+
+For a family \(\mathcal O\) of available operations on retained state \(R\), define the information potential of a contrast by
+\begin{equation*}
+\mathcal P_{\mathcal O}(h)=\sup_{o\in\mathcal O}
+\norm{\E[h(Z)\mid X_o]}^2.
+\end{equation*}
+When \(Z\to R\to X_o\), this is bounded by \(\norm{\E[h(Z)\mid R]}^2\). If the present readout belongs to \(\mathcal O\), the difference \(\mathcal P_{\mathcal O}(h)-\mathcal S_c(h)\) is available but unused predictive strength. Source-dependent new observations enter the accounting as additional evidence.
+
+\subsection{The common mathematical form}
+The full predictive description consists of \((\Omega,\mu,Z,\{X_c\},\{\M_{dc}\})\), where \(\M_{dc}\) registers predictive modes between contexts. Its calculation follows one chain:
+\begin{equation}
+\begin{gathered}
+p_c(z\mid x)\ \longrightarrow\ \T_c\ \longrightarrow\ \G_c,\\
+\M_{dc}=\U_{dc}\Stretch_{dc},\qquad
+\Hol_{\beta\leftarrow\alpha}=\U_\beta^*\U_\alpha.
+\end{gathered}
+\label{eq:spine}
+\end{equation}
+The first line measures prediction. The second measures how its distinctions are registered, stretched, and compared across routes. \Cref{sec:phase} specifies these maps and gives the complex plane its operational meaning.

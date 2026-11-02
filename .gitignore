@@ -1,0 +1,12 @@
+*.aux
+*.log
+*.out
+*.toc
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+latex/main.pdf
+_build/
+.DS_Store
+Thumbs.db

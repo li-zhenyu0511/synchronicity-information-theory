@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the preprint when referring to this work."
+type: article
+title: "An Information-Theoretic Principle of Prediction: Synchronicity"
+authors:
+  - family-names: Li
+    given-names: Zhenyu
+    affiliation: Zhejiang University
+version: "0.2"
+date-released: 2026-11-02
+url: "https://github.com/li-zhenyu0511/synchronicity-information-theory"
+repository-code: "https://github.com/li-zhenyu0511/synchronicity-information-theory"
+keywords:
+  - information theory
+  - prediction
+  - synchronicity
+  - geometric phase

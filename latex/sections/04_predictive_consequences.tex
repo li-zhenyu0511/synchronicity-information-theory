@@ -1,0 +1,51 @@
+\section{What Phase Predicts}
+\label{sec:consequences}
+\subsection{A quarter-turn with unchanged information amount}
+Let the future target vector be \(Z\sim\mathcal N(0,\Id_3)\). In context \(n\), the available record is
+\begin{equation*}
+X_n=A_nZ+\eta,\qquad \eta\sim\mathcal N(0,\sigma^2\Id_2),
+\end{equation*}
+where \(A_n\) has orthonormal rows perpendicular to a unit normal \(n\), and \(\sigma>0\). This joint law calibrates a forecast from \(X_n\) to \(Z\). It has an equivalent prospective realization: first draw \(X_n\sim\mathcal N(0,(1+\sigma^2)\Id_2)\), then draw the later target from its Gaussian conditional law, given in \cref{app:example}.
+
+On linear future contrasts \(h_v(Z)=v^TZ\),
+\begin{equation}
+\G_n=\frac{I-nn^T}{1+\sigma^2},\qquad
+I(Z;X_n)=\log_2(1+\sigma^{-2}).
+\label{eq:example}
+\end{equation}
+Both predictive strengths in the observable plane stay fixed as \(n\) changes. Register the modes along the short great-circle arcs \(e_z\to e_x\to e_y\to e_z\). Initial questions \((e_x,e_y)\) return as \((e_y,-e_x)\), giving
+\begin{equation*}
+\Hol=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad\phi=\pi/2.
+\end{equation*}
+The current record has the same total mutual information and the same observable plane at the endpoint. The first tracked question now predicts the second target component. A weak shift of the first target component produces a different response, and inverse registration restores the original prediction. Phase identifies this change in what the response means.
+
+\subsection{A predictive penalty for misregistration}
+The statistical consequence can be quantified for two-mode predictive readouts. Let \(w\in\R^2\) be a calibrated record with \(\E w=0\) and \(\E[ww^T]=\Id_2/2\). Suppose the future target has conditional law \(\mathcal N(K_*w,\sigma^2\Id_2)\), and a predictor reports \(\mathcal N(Kw,\sigma^2\Id_2)\).
+
+\begin{proposition}[Amplitude and phase in predictive loss]
+\label{prop:loss}
+The excess expected log loss in nats is
+\begin{equation}
+\mathcal R=\frac{\norm{K-K_*}_F^2}{4\sigma^2}.
+\label{eq:loss}
+\end{equation}
+For \(K=a\Rot(\phi)\) and \(K_*=b\Rot(\phi_*)\), with \(a,b\ge0\),
+\begin{equation}
+\mathcal R=\frac{a^2+b^2-2ab\cos(\phi-\phi_*)}{2\sigma^2}.
+\label{eq:phaseloss}
+\end{equation}
+\end{proposition}
+Thus equally strong responses can have different forecasting performance because they address differently oriented target distinctions. The predictor and target are compared in the same calibrated coordinates. A geometric route supplies \(K\) when its implemented links realize the stated registration; measured links supply it directly.
+
+\subsection{Estimating the predictive structure}
+For finite alphabets, the matrix
+\begin{equation*}
+B_c(x,z)=\frac{\sqrt{\nu(z)}\,p(X_c=x\mid Z=z)}{\sqrt{p_c(x)}}
+\end{equation*}
+represents \(\T_c\) in whitened coordinates. Restricting \(B_c^*B_c\) to the subspace orthogonal to \(\sqrt\nu\) gives \(\G_c\). A finite dictionary of future contrasts and record features provides a regression-based approximation for larger systems. The calibration records can come from completed episodes; a deployed forecast uses its current record and the resulting predictive operator.
+
+Estimate \(\G_c\), choose a stable band, register neighboring frames, and compute the relative route product in \cref{eq:phase}. Report predictive strengths together with phase. Spectral gaps control subspace sensitivity~\citep{yu2015}, while the smallest singular value of neighboring overlaps controls registration sensitivity. For orthogonal links with aligned errors \(\norm{\widehat\U_j-\U_j}\le\delta_j\),
+\begin{equation*}
+\norm{\widehat\Hol-\Hol}\le\sum_j\delta_j.
+\end{equation*}
+For planar rotations, a bound \(\delta\le2\) gives principal angular error at most \(2\arcsin(\delta/2)\). \Cref{app:errors} also gives an error bound for actual transfer products and a resulting interval for predictive loss. These calculations reduce a calibrated family of responses to mode strengths and route comparisons.

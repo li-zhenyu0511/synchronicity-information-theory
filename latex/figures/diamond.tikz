@@ -1,0 +1,62 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,font=\footnotesize]
+\path[use as bounding box] (-.3,-.5) rectangle (16.8,5.35);
+\node[anchor=west,font=\bfseries\small] at (0,5.15) {(a) Propagation and recombination};
+\fill[routeblue!5] (2.25,.6)--(.35,2.5)--(2.25,4.4)--(4.15,2.5)--cycle;
+\draw[gray!55,thin] (2.25,.6)--(1.3,2.5)--(2.25,4.4);
+\draw[gray!55,thin] (2.25,.6)--(3.2,2.5)--(2.25,4.4);
+\draw[gray!55,thin] (2.25,.6)--(2.25,4.4);
+\draw[routeblue,very thick,->] (2.25,.6)--(.35,2.5);
+\draw[routeblue,very thick,->] (.35,2.5)--(2.25,4.4);
+\draw[routeorange,very thick,dashed,->] (2.25,.6)--(4.15,2.5);
+\draw[routeorange,very thick,dashed,->] (4.15,2.5)--(2.25,4.4);
+\draw[gray,densely dashed] (.35,2.5)--(4.15,2.5);
+\fill (2.25,.6) circle (1.7pt);
+\fill (2.25,4.4) circle (1.7pt);
+\fill[routeblue] (.35,2.5) circle (1.7pt);
+\fill[routeorange] (4.15,2.5) circle (1.7pt);
+\node[anchor=north,align=center] at (2.25,.42) {Preparation $p$};
+\node[anchor=south,align=center] at (2.25,4.53) {Future readout $q$: target $Z$};
+\node[routeblue,anchor=east] at (.2,2.5) {$l$};
+\node[routeorange,anchor=west] at (4.3,2.5) {$r$};
+\node[routeblue,fill=white,inner sep=1.5pt] at (.95,1.6) {route $\alpha$};
+\node[routeorange,fill=white,inner sep=1.5pt] at (3.55,1.6) {route $\beta$};
+\node[fill=white,inner sep=2pt,align=center] at (2.25,3.12) {Unresolved\\continuations};
+\node[fill=white,inner sep=1pt] at (2.25,2.5) {parallel cut};
+\draw[->,thin] (-.16,.6)--(-.16,1.55) node[above] {$t$};
+\draw[->,thin] (-.16,.6)--(.65,.6) node[below] {$x$};
+
+\draw[gray!35] (5.05,0)--(5.05,4.95);
+\node[anchor=west,font=\bfseries\small] at (5.45,5.15) {(b) Elimination of alternatives};
+\node[anchor=west] at (5.55,4.5) {Before the record: $\Omega$};
+\foreach \k in {0,...,7}{\draw[fill=gray!15,draw=gray!65] (5.55+.48*\k,3.85) rectangle +(0.35,.35);}
+\foreach \k in {0,...,7}{\pgfmathtruncatemacro{\outcome}{\k+1}\node at (5.725+.48*\k,4.025) {\outcome};}
+\draw[->,thick] (7.4,3.65)--(7.4,3.15);
+\node[anchor=west] at (7.63,3.4) {record $X_c$};
+\node[anchor=west] at (5.55,2.95) {Compatible: $\Omega_{c,x}$};
+\foreach \k in {0,...,7}{\draw[fill=white,draw=gray!35] (5.55+.48*\k,2.3) rectangle +(0.35,.35);}
+\foreach \k in {0,2,3,6}{\draw[fill=routeblue!25,draw=routeblue] (5.55+.48*\k,2.3) rectangle +(0.35,.35);}
+\foreach \k in {0,...,7}{\pgfmathtruncatemacro{\outcome}{\k+1}\node[text=gray!55] at (5.725+.48*\k,2.475) {\outcome};}
+\foreach \k in {0,2,3,6}{\pgfmathtruncatemacro{\outcome}{\k+1}\node at (5.725+.48*\k,2.475) {\outcome};}
+\draw[->,thick] (7.4,2.1)--(7.4,1.6);
+\node[anchor=west] at (7.63,1.85) {record $V$};
+\foreach \k in {0,...,7}{\draw[fill=white,draw=gray!35] (5.55+.48*\k,.85) rectangle +(0.35,.35);}
+\foreach \k in {2,6}{\draw[fill=routeblue!25,draw=routeblue] (5.55+.48*\k,.85) rectangle +(0.35,.35);}
+\foreach \k in {0,...,7}{\pgfmathtruncatemacro{\outcome}{\k+1}\node[text=gray!55] at (5.725+.48*\k,1.025) {\outcome};}
+\foreach \k in {2,6}{\pgfmathtruncatemacro{\outcome}{\k+1}\node at (5.725+.48*\k,1.025) {\outcome};}
+\node[align=center] at (7.45,.25) {Remaining outcomes: $3$ or $7$\\Odd parity is already predicted};
+
+\draw[gray!35] (10.4,0)--(10.4,4.95);
+\node[anchor=west,font=\bfseries\small] at (10.85,5.15) {(c) Comparison of predictive routes};
+\begin{scope}[yshift=.4cm]
+\draw[->,gray] (11.65,1.85)--(15.65,1.85) node[right] {$h_1$};
+\draw[->,gray] (13.1,.8)--(13.1,4.35) node[above] {$h_2$};
+\draw[gray!35] (13.1,1.85) circle (1.5);
+\draw[routeblue,very thick,->] (13.1,1.85)--(14.58,2.11);
+\draw[routeorange,very thick,dashed,->] (13.1,1.85)--(13.61,3.26);
+\node[routeblue,anchor=west] at (14.6,2.25) {$\U_\alpha h$};
+\node[routeorange,anchor=south] at (13.7,3.35) {$\U_\beta h$};
+\draw[->,thick] (13.374,2.602) arc[start angle=70,end angle=10,radius=.8];
+\node at (13.97,2.58) {$\phi$};
+\end{scope}
+\node[align=center] at (13.45,.25) {$\Hol_{\beta\leftarrow\alpha}=\U_\beta^*\U_\alpha$\\same question, relative orientation};
+\end{tikzpicture}
